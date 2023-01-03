@@ -1,0 +1,44 @@
+.form{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    margin: auto;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+form{
+    display: inline-block;
+}
+.form .b {
+    margin-top: 10px;
+    border: hidden;
+    border-radius: 0.3rem;
+    background-color: rgba(120, 120, 120, 0.7);
+    color: white;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.form .b:hover{
+    background-color: rgba(130, 130, 130, 1);
+    transform: scale(1.05);
+}
+.r, .rt{
+    float: left;
+}
+
+@media only screen and (max-width: 600px) {
+    .form .b{
+        height: 5vh;
+        width: 20vh;
+    }
+    
+}
+
+@media only screen and (min-width: 600px) {
+    .form .b {
+        height: 3vw;
+        width: 20vw;
+    }
+}

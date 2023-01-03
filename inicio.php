@@ -10,9 +10,11 @@ include "inc/header.php"
 <?php
  // Comprobamos si hay alguna votación activa
 if ($_SESSION['perm'] == 1) {
-    echo 'Tienes permisos de administrador, <a href="/panel.php"><button>Ir al panel de administrador</button></a>';
+    echo '<div class="t">Tienes permisos de administrador, <a href="/panel.php"><button>Ir al panel de administrador</button></a></div>';
 }
 ?>
+<link rel="stylesheet" href="/styles/inicio.php.css">
 <!-- Contenido -->
+<link rel="stylesheet" href="/styles/form-user.css">
 <?php include 'inc/vote.php'?>
 <?php include "inc/footer.php" ?>

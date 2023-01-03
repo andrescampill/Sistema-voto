@@ -5,6 +5,7 @@ class vote {
     public $si;
     public $no;
     public $abs;
+    public $users;
     public $activa;
 }
 ?>

@@ -14,8 +14,9 @@ if(isset($_POST['submit'])){
     $vote->texto = $desc;
     $vote->si = $vote->no = $vote->abs = 0;
     $vote->activa = 1;
+    $vote->users = json_encode(array());
     // Lo guardamos en la base de datos
-    $sql = "INSERT INTO `vote` (`titulo`, `texto`, `si`, `no`, `abs`, `activa`) VALUES ('$vote->titulo', '$vote->texto', '$vote->si', '$vote->no', '$vote->abs', '$vote->activa')";
+    $sql = "INSERT INTO `vote` (`titulo`, `texto`, `si`, `no`, `abs`, `users`, `activa`) VALUES ('$vote->titulo', '$vote->texto', '$vote->si', '$vote->no', '$vote->abs', '$vote->users', '$vote->activa')";
     $resultado = mysqli_query($conec, $sql);
     if($resultado == true){
         $msg = "Se ha guardado la votación";
@@ -34,5 +35,7 @@ if(isset($_POST['submit'])){
         <p><?= $msg ?></p>
     </form>
 </main>
+<hr>
+<!-- Otros sistemas -->
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php' ?>
