@@ -6,6 +6,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/inc/header-panel.php';
 <?php
 $error = '';
 $nombre = $cont = $cont2 = $user = $perm = '';
+$class = $disabled = '';
 
 if (isset($_POST['submit'])) {
     $cont = $_POST['cont'];
@@ -31,13 +32,14 @@ if (isset($_POST['submit'])) {
                         $sql = "INSERT INTO users (user, nombre, cont, perm, por) VALUES ('{$user}', '{$nombre}', '{$cont}', '{$perm}', '{$por}')";
                         $resultado = mysqli_query($conec, $sql);
                         if ($resultado == true) {
-                            $error = "Se ha añadido correctamente";
+                            $error = "Se ha creado correctamente";
                         } else {
                             // REVISAR 
                             // $error = "Ha habido un error en el proceso: {$resultado->error}";
                         }
                     } else {
                         $error = "Ya existe una persona con ese usuario";
+                        $class = "invalid";
                     }
                 } else {
                     $error = "Tienes que poner un nombre";
@@ -53,18 +55,24 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
-
+<link rel="stylesheet" href="/styles/registrar.css">
 <main class="contenido">
     <h1>Registrar a usuarios</h1>
-    <form action="/panel/registrar.php" method="post">
-        <input type="text" name="user" class="user" placeholder="Usuario" required> <br>
-        <input type="text" name="nombre" class="nombre" placeholder="Nombre completo" required><br>
-        <input type="password" name="cont" class="cont" placeholder="Contraseña" id="password" required><br>
-        <input type="password" name="cont2" class="cont2" placeholder="Repite la contraseña" id="confirm_password" required> <br>
-        <input type="checkbox" name="perm" class="perm" placeholder="Permisos"> <label for="perm">Permisos</label> <br>
-        <input type="submit" class="submit" name="submit">
-        <?= $error ?>
+    <div class="form">
+        <form action="/panel/registrar.php" method="post" class="register">
+            <div class="input">
+                <input type="text" name="user" class="user <?= $class ?>" placeholder="Usuario" required>
+                <input type="text" name="nombre" class="nombre <?= $class ?>" placeholder="Nombre completo" required><br>
+                <input type="password" name="cont" class="cont <?= $class ?>" placeholder="Contraseña" id="password" required><br>
+                <input type="password" name="cont2" class="cont2 <?= $class ?>" placeholder="Repite la contraseña" id="confirm_password" required> <br>
+            </div>
+            <input type="checkbox" name="perm" class="perm" placeholder="Permisos"> <label for="perm" class="perm label">Permisos</label> <br>
+            <input type="submit" class="submit" name="submit">
+            <button onclick="history.back(-2)" class="atras">Atras / Cancelar </button> <br>
+            <p class="error" <?= $class ?>><?= $error ?><p>
+    </div>
     </form>
-    <button onclick="history.go(-1);">Atras / Cancelar </button>
+            
+
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php' ?>

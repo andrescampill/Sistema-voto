@@ -1,4 +1,5 @@
-<?php include "inc/header-panel.php" ?>
+<?php $titulopag = "Panel - Sistema de voto - FEMAE";
+include "inc/header-panel.php"; ?>
 <main class="contenido">
     <?php
     $user = $_SESSION['user'];
@@ -15,5 +16,6 @@
     } else {
     }
     ?>
+    <?php include 'inc/vote.php'?>
 </main>
 <?php include 'inc/footer.php' ?>

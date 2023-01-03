@@ -89,6 +89,10 @@ body{
     .footer{
         display: none;
     }
+    .contenido{
+        margin-left: 1rem;
+        padding: 1rem;
+    }
 }
 
 /* Ordenadores */ 
