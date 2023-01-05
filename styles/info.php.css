@@ -1,0 +1,139 @@
+.text{
+    display: inline-block;
+    position: inherit;
+    width: 20%;
+}
+#grafico{
+    position: absolute;
+    display: inline-block;
+    width: 70%;
+    height: 30%;
+    min-width: 200px;
+    min-height: 100px;
+}
+.t {
+    text-align: right;
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(100, 100, 100, 0.15);
+}
+form{
+    margin-left: 35%;
+}
+
+.enviar{
+    border: hidden;
+    border-radius: 5px;
+    background-color: rgba(150, 150, 150, 0.7);
+    cursor: pointer;
+    transition: .5s ease;
+    color: white;
+    height: 2vw;
+    width: 40vh;
+    margin-top: 10px;
+    font-size: 18px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    min-width: 80px;
+    min-height: 30px;
+}
+
+.enviar:hover{
+    background-color: rgba(97, 227, 71, 0.7);
+    transform: scale(1.05);
+}
+
+.c{
+    position: relative;
+    width: 40px;
+    height: 20px;
+    appearance: none;
+    background: #c6c6c6;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+    /* transition: 0.5s ease; */
+}
+.c:checked{
+    background: #3cf464;
+}
+.c::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    transition: .4s ease;
+}
+.c:checked::before{
+    left: 20px;
+}
+
+label{
+    display: inline-block;
+}
+textarea{
+    border-radius: 5px;
+    border: hidden;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    background-color: rgba(218, 218, 218, 0.6);
+    transition: 0.5s ease;
+    text-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 16vw;
+    height: 4vh;
+}
+
+input:disabled{
+    background-color: rgba(184, 184, 184, 0.63);
+
+}
+input[type="text"], input[type="number"]{
+    border-radius: 5px;
+    height: 1.8rem;
+    border: hidden;
+    width: 16vw;
+    text-align: center;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+}
+label{
+    display: block;
+    width: 5vw;
+    margin-right: 15px;
+    float: left;
+    text-align: right;
+}
+textarea:focus{
+    transform: scale(1.05);
+    outline: none;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.footer{
+    margin-top: auto !important;
+    position: inherit !important;
+    bottom: auto !important;
+}
+
+@media only screen and (min-width: 600px){
+    .navbar {
+        height: 100%;
+        width: 5rem;
+    }
+}

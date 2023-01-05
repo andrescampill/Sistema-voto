@@ -31,6 +31,8 @@ if (isset($_POST['submit'])) {
             $_SESSION['perm'] = false;
             header('Location: /inicio.php');
         }
+    } else {
+        $error = "Contrasñea incorrecta";
     }
 }
 ?>

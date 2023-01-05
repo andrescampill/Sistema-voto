@@ -1,6 +1,6 @@
 <div class="footer">
         <p>Hecho con 💚 por <a href="https://twitter.com/andrescampillop" target="_blank" rel="noopener noreferrer">Andrés Campillo</a></p>
-        <p class="año">©️ <?php echo date('Y') ?> Federación Murciana de Asociaciones de Estudiantes</p>
+        <p class="año">© <?php echo date('Y') ?> Federación Murciana de Asociaciones de Estudiantes</p>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap');
             .footer{

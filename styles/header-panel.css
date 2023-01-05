@@ -19,6 +19,7 @@ body{
     background-color: #3b3b3b;
     transition: width 600ms ease;
     transition: width 200ms ease;
+    z-index: +999999999999 !important;
   }
   
 .navbar-nav {

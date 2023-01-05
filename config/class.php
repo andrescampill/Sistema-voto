@@ -1,3 +1,4 @@
+
 <?php
 class vote {
     public $titulo;

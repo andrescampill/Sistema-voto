@@ -1,4 +1,4 @@
-<?php $titulo = "Borrar usuarios - Sistema de voto";
+<?php $titulopag = "Borrar usuarios - Sistema de voto";
 include $_SERVER['DOCUMENT_ROOT'] . '/inc/header-panel.php' ?>
 <?php
 $id = $_GET['id'];
@@ -9,6 +9,5 @@ $id = $_GET['id'];
         header('Location: /panel/usuarios.php');
     } else {
         echo "Ha habido un error ";
-        echo $resultado->error;
     }
 ?>
