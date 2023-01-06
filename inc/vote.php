@@ -12,6 +12,7 @@ if ($resultado->num_rows > 0) {
     $desc = $r["texto"];
     $id = $r["id"];
     $users = json_decode($r['users'], true);
+    $user = strtolower($user);
     if (!in_array("$user", $users)) {
         if (isset($_POST['submit'])) {
             if (!empty($id)) {
@@ -19,6 +20,7 @@ if ($resultado->num_rows > 0) {
                     case "si":
                         $sql = "UPDATE `vote` SET `si` = `si` + 1 WHERE `vote`.`id` = '$id';";
                         $resultado = mysqli_query($conec, $sql);
+                        $user = strtolower($user);
                         array_push($users, $user);
                         $users = json_encode($users);
                         $sql2 = "UPDATE `vote` SET `users` = '$users' WHERE `vote`.`id` = '$id';";
@@ -36,6 +38,7 @@ if ($resultado->num_rows > 0) {
                     case "no":
                         $sql = "UPDATE `vote` SET `no` = `no` + 1 WHERE `vote`.`id` = '$id';";
                         $resultado = mysqli_query($conec, $sql);
+                        $user = strtolower($user);
                         array_push($users, $user);
                         $users = json_encode($users);
                         $sql2 = "UPDATE `vote` SET `users` = '$users' WHERE `vote`.`id` = '$id';";
@@ -53,6 +56,7 @@ if ($resultado->num_rows > 0) {
                     case "abs":
                         $sql = "UPDATE `vote` SET `abs` = `abs` + 1 WHERE `vote`.`id` = '$id';";
                         $resultado = mysqli_query($conec, $sql);
+                        $user = strtolower($user);
                         array_push($users, $user);
                         $users = json_encode($users);
                         $sql2 = "UPDATE `vote` SET `users` = '$users' WHERE `vote`.`id` = '$id';";
