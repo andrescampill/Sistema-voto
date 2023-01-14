@@ -12,7 +12,9 @@ Despues de sufrir este problema, me planteé crear esta aplicación, que a mi pa
 
 ### ¿Con qué tecnologia está creado?
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+
 La tecnolgia principal utilizada es PHP, gracias a esto, ha sido facil poder programar las partes dinamicas de la aplicación. El programa está pensado para utilizarse junto a una base de datos MySQL; el progama usa la extensión de php ```mysqli```, por lo que no se puede user otro software de bases de datos.
+Nota: esta es mi primera aplicación en PHP, por lo que es posible que el codigo no sea el mejor.
 
 ## Instalación
 
@@ -59,9 +61,11 @@ Con esto ya tienes toda la aplicación instalada, podras crear votaciones y usua
 
 ATENCIÓN: es necesario que la aplicación tenga un certificado SSL y sea abireta usando HTTPS, si no se usa, algunas de las funciones podrian no funcioar, esto es una medida de seguridad.
 
+Actualmente esta en fase alpha la creación de votaciones que no sigan el patron de «A favor, En contra o Abstención».
+
 ## Versión
-La versión actual es: v0.5.2-dev. 
-Dev: el producto está siendo desarrollado por lo que no ha sido probado en un escenario real y puede contener grandes error.
+Actualmente la aplicación se encuenta en proceso de: ```Desarrollo```.
+El proyecto no sigue un sistema numerico de versiones debido a la constante actualziación.  
 
 
 ---

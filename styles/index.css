@@ -24,6 +24,11 @@ input{
     margin-top: 10px;
     height: 30px;
     width: 50vw;
+    text-align: center;
+}
+
+input:focus{
+    text-align: center;
 }
 
 .submit {

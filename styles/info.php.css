@@ -137,3 +137,7 @@ body{
         width: 5rem;
     }
 }
+
+#esconder, .esconder { 
+    display: none;
+}
