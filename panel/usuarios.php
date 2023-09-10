@@ -3,7 +3,7 @@ $titulo = "Usuario - Sistema de voto";
 include $_SERVER['DOCUMENT_ROOT'] . '/inc/header-panel.php';
 ?>
 <main class="contenido">
-    <link rel="stylesheet" href="/styles/usuarios.php.css">
+    <link rel="stylesheet" href="/styles/usuarios.css">
     <h1>Usuarios</h1>
     <a href="/panel/registrar.php"><button class="registrar">Registrar a nuevo usuario</button></a> <br>
     <br>

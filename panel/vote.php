@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <script src="/tools/form.js"></script>
-<link rel="stylesheet" href="/styles/vote.php.css">
+<link rel="stylesheet" href="/styles/vote.css">
 <main class="contenido">
     <h1>Voatciones</h1>
     <!-- CREAR VOTACIÓN -->

@@ -63,7 +63,7 @@ if(isset($_POST['submit'])){
         }
     }
 ?>
-<link rel="stylesheet" href="/styles/modificar.php.css">
+<link rel="stylesheet" href="/styles/modificar.css">
 <main class="contenido">
     <h1>Modificar usuario</h1>
     <div class="form">

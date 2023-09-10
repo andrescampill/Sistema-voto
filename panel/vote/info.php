@@ -52,9 +52,8 @@ if ($data["type"] != "per") {
     $op = json_decode($data['op'], true);
     $totalop = count($op);
 }
-
 ?>
-<link rel="stylesheet" href="/styles/info.php.css">
+<link rel="stylesheet" href="/styles/info.css">
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <main class="contenido">
     <h1>Votación - <?= $titulo ?></h1>
@@ -146,15 +145,16 @@ if ($data["type"] != "per") {
                     foreach ($op as $columns) {
                         echo '<tr>';
                         foreach ($columns as $column => $value) {
-                            if($value > 0){
-                            echo '<td>' . $column . '</td>';
-                            echo '<td>' . $value . '</td>';
-                            echo '<td>' . number_format($value / $totalopc * 100, 2) . '% </td>';
-                        } else {
-                            echo '<td>' . $column . '</td>';
-                            echo '<td>' . $value . '</td>';
-                            echo '<td>' . number_format($value / $totalop * 100 * 0, 2) . '% </td>';
-                        }}
+                            if ($value > 0) {
+                                echo '<td>' . $column . '</td>';
+                                echo '<td>' . $value . '</td>';
+                                echo '<td>' . number_format($value / $totalopc * 100, 2) . '% </td>';
+                            } else {
+                                echo '<td>' . $column . '</td>';
+                                echo '<td>' . $value . '</td>';
+                                echo '<td>' . number_format($value / $totalop * 100 * 0, 2) . '% </td>';
+                            }
+                        }
                         echo '</tr>';
                     }
                 }
@@ -177,6 +177,8 @@ if ($data["type"] != "per") {
 </main>
 
 <?php
+$fecha = date("dmoHis");
+$nombrepdf = 'Certificado' . $fecha . '.pdf';
 if ($data["type"] = "per") {
     echo '<span id="grafico2" class="' . $ida2 . '"></span>';
 }
@@ -213,11 +215,11 @@ if ($data["type"] = "per") {
         <?php
         echo "var data = google.visualization.arrayToDataTable([
                 ['Opción', 'Número'],";
-            foreach ($op as $opcion) {
-                foreach ($opcion as $opcion => $value) {
-                    echo "['{$opcion}', {$value}],";
-                }
+        foreach ($op as $opcion) {
+            foreach ($opcion as $opcion => $value) {
+                echo "['{$opcion}', {$value}],";
             }
+        }
         echo "]);";
         ?>
 
@@ -229,4 +231,25 @@ if ($data["type"] = "per") {
         charta.draw(data, options);
     }
 </script>
+<style>
+    #exp2 {
+        background-color: red;
+        color: black;
+    }
+</style>
+<script>
+    function linka() {
+        var handle = window.open('/panel/vote/exportar.php?id=<?php echo $id ?>&time=<?php echo $fecha ?>', "_blank");
+        handle.blur();
+        window.focus();
+        setTimeout(ven2, 1000);
+
+        function ven2() {
+            window.open('/panel/vote/veri.php?file=<?php echo $nombrepdf ?>');
+        }
+    };
+    document.getElementById("buton").addEventListener("click", linka);
+</script>
+<button onclick="linka()">EXPORTAR</button>
+
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php' ?>
