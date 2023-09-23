@@ -3,7 +3,7 @@
     position: inherit;
     width: 20%;
 }
-#grafico{
+#grafico, #grafico2{
     position: absolute;
     display: inline-block;
     width: 70%;
@@ -140,4 +140,24 @@ body{
 
 #esconder, .esconder { 
     display: none;
+}
+
+.exportar{
+ margin: auto;
+ transform: translateY(-60px);
+    border: hidden;
+    border-radius: 5px;
+    background-color: rgba(150, 150, 150, 0.7);
+    cursor: pointer;
+    transition: .5s ease;
+    color: white;
+    height: 2vw;
+    width: 40vh;
+    font-size: 18px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: -60px;
+}
+
+.exportar:hover{
+    background-color: rgba(227, 115, 71, 0.7);
 }

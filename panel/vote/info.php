@@ -178,10 +178,7 @@ if ($data["type"] != "per") {
 
 <?php
 $fecha = date("dmoHis");
-$nombrepdf = 'Certificado' . $fecha . '.pdf';
-if ($data["type"] = "per") {
-    echo '<span id="grafico2" class="' . $ida2 . '"></span>';
-}
+
 ?>
 
 <script type="text/javascript">
@@ -242,14 +239,9 @@ if ($data["type"] = "per") {
         var handle = window.open('/panel/vote/exportar.php?id=<?php echo $id ?>&time=<?php echo $fecha ?>', "_blank");
         handle.blur();
         window.focus();
-        setTimeout(ven2, 1000);
-
-        function ven2() {
-            window.open('/panel/vote/veri.php?file=<?php echo $nombrepdf ?>');
-        }
     };
     document.getElementById("buton").addEventListener("click", linka);
 </script>
-<button onclick="linka()">EXPORTAR</button>
+<button onclick="linka()" class="exportar">EXPORTAR</button>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php' ?>

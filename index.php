@@ -51,6 +51,7 @@ if (isset($_POST['submit'])) {
 
 <body>
     <p class="titulo">Sistema de voto</p>
+    <img src="/assets/img/pdf-header.png" alt="FEMAE" class="center">
     <div class="formulario">
         <p>Inicia sesión</p>
         <form action="" method="post">
