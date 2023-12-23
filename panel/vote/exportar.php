@@ -40,10 +40,11 @@ if ($data["type"] == 'per') {
     $ida2 = "esconder";
 }
 ?>
+<meta name="viewport" content="width=1604px, height=767px">
 <img src="/assets/img/pdf-header.png" alt="" srcset="">
 <h1>CERTIFICADO DE VOTACIÓN</h1>
 <div class="contenido">
-    <p>El Sistema de Voto en linea de la Federación Murciana de Asociaciones de Estudiantes (FEMAE), informa que, a fecha de <text id="fecha"></text> a las <text id="hora"> </text>, la votación con título: "<?= $titulo ?>", estado <?= $msg ?>, identificación: <?= $id ?>, tipo <?= $msg2 ?> y descripción: "<?= $texto ?>", se encuentra en el Sistema de Votación y cuenta con el siguiente resultado:</p>
+    <p>El Sistema de Voto en linea de la Federación Murciana de Asociaciones de Estudiantes (FEMAE), informa que, a fecha de <text id="fecha"></text> a las <text id="hora"> </text>, la votación con título: "<?= $titulo ?>", estado <?= $msg ?>, identificación: <?= $id ?>, tipo <?= $msg2 ?> y descripción: "<?= $texto ?>", se encuentra en el Sistema de Votación digital de la Federación y cuenta con el siguiente resultado:</p>
     <div class="text" id="<?= $ida ?>"> <!-- NORMAL -->
         <table id="resultados">
             <tr>
