@@ -20,12 +20,20 @@ Nota: esta es mi primera aplicación en PHP, por lo que es posible que el codigo
 
 Este programa no está diseñado para que el proceso de instalación sea intuitivo.
 1. Crea una base de datos.
-2. Edita el codigo de databse.php para que contenga los datos de tu base de datos, se encuenta en ```/config/database.php```. Codigo que tienes que editar:
+2. Crea un archivo llamado databse.php en el directorio /config para que contenga los datos de tu base de datos. Debes obtener un archivo con la siguiente estructura:  ```/config/database.php```. Dentro de este archivo añade este código:
 ```php
+<?php
 define('DB_HOST', '[TU HOST]');
 define('DB_USER', '[TU USUARIO]');
 define('DB_PASS', '[TU CONTRASÑEA]');
 define('DB_NAME', '[TU BASE DE DATOS]');
+
+$conec = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+if ($conec->connect_error){
+    die('Conexión fallida' . $conec->connect_error);
+}
+?>
 ```
 3. Crea una tabla para los usuarios, desde phpMyAdmin o usando el siguiente comando SQL:
 ```SQL
@@ -64,8 +72,8 @@ ATENCIÓN: es necesario que la aplicación tenga un certificado SSL y sea abiret
 Actualmente esta en fase alpha la creación de votaciones que no sigan el patron de «A favor, En contra o Abstención».
 
 ## Versión
-Actualmente la aplicación se encuenta en proceso de: ```Desarrollo```.
-El proyecto no sigue un sistema numerico de versiones debido a la constante actualziación.  
+Actualmente la aplicación se encuenta la versión ```v1.0.1``` .
+El proyecto sigue el sistema de Versionado Semántico.  
 
 
 ---
