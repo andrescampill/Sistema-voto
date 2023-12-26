@@ -57,123 +57,129 @@ if ($data["type"] != "per") {
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <main class="contenido">
     <h1>Votación - <?= $titulo ?></h1>
+    
     <form method="post">
         <label for="id"> ID</label><input type="number" name="id" disabled value="<?= $id ?>"> <br>
         <label for="titulo"> Titulo</label><input type="text" name="titulo" disabled value="<?= $titulo ?>"> <br>
         <label for="desc"> Descripción</label><textarea name="desc" cols="30" rows="4" class="textarea"><?= $texto ?></textarea> <br>
         <label for="activa" class="lc">Activa: </label><input type="checkbox" class="c" name="activa" <?= $activa ?>><br>
         <input type="submit" name="submit" value="Actualizar" class="enviar"> <br>
+        <button onclick="linka()" class="exportar">Exportar</button>
         <?= $msg ?>
     </form>
     <hr>
     <div class="resultados">
         <h3>Resultados</h3>
-
-        <!-- Cuando es normal -->
-        <div class="text" id="<?= $ida ?>"> <!-- NORMAL -->
-            <table>
-                <tr>
-                    <th>Opción</th>
-                    <th>Número</th>
-                    <th>Porcentage</th>
-                </tr>
-                <tr>
-                    <td>
-                        <p>A favor (sies)</p>
-                    </td>
-                    <td>
-                        <p><?= $data["si"] ?></p>
-                    </td>
-                    <td>
-                        <p><?= number_format($data["si"] / $total * 100, 2) ?>%</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>En contra (noes)</p>
-                    </td>
-                    <td>
-                        <p><?= $data["no"] ?></p>
-                    </td>
-                    <td>
-                        <p><?= @number_format($data["no"] / $total * 100, 2) ?>%</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>Abstenciones</p>
-                    </td>
-                    <td>
-                        <p><?= $data["abs"] ?></p>
-                    </td>
-                    <td>
-                        <p><?= @number_format($data["abs"] / $total * 100, 2) ?>%</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p class="t"><b>Total:ㅤ</b></p>
-                    </td>
-                    <td><?= $total ?></td>
-                    <td></td>
-                </tr>
-            </table>
-
-        </div>
-        <?php
-        if ($data["type"] != "per") {
-            echo '<span id="grafico" class="<?= $id ?>"></span>';
-            $op = array();
-        }
-        ?>
-        <!-- CUANDO SEA PERSONALIZADO -->
-        <div id="<?= $ida2 ?>">
-            <table>
-                <tr>
-                    <th>Opción</th>
-                    <th>Número</th>
-                    <th>Porcentage</th>
-                </tr>
+        <div class="content2">
+            <!-- Cuando es normal -->
+            <div class="text" id="<?= $ida ?>"> <!-- NORMAL -->
+                <table>
+                    <tr>
+                        <th>Opción</th>
+                        <th>Número</th>
+                        <th>Porcentage</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>A favor (sies)</p>
+                        </td>
+                        <td>
+                            <p><?= $data["si"] ?></p>
+                        </td>
+                        <td>
+                            <p><?= number_format($data["si"] / $total * 100, 2) ?>%</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>En contra (noes)</p>
+                        </td>
+                        <td>
+                            <p><?= $data["no"] ?></p>
+                        </td>
+                        <td>
+                            <p><?= @number_format($data["no"] / $total * 100, 2) ?>%</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Abstenciones</p>
+                        </td>
+                        <td>
+                            <p><?= $data["abs"] ?></p>
+                        </td>
+                        <td>
+                            <p><?= @number_format($data["abs"] / $total * 100, 2) ?>%</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="t"><b>Total:ㅤ</b></p>
+                        </td>
+                        <td><?= $total ?></td>
+                        <td></td>
+                    </tr>
+                </table>
                 <?php
-                if ($data["type"] == "per") {
-                    $totalopc = 0;
-                    foreach ($op as $opcion) {
-                        foreach ($opcion as $opcion => $value) {
-                            $totalopc = $totalopc + $value;
-                        }
-                    }
-                    foreach ($op as $columns) {
-                        echo '<tr>';
-                        foreach ($columns as $column => $value) {
-                            if ($value > 0) {
-                                echo '<td>' . $column . '</td>';
-                                echo '<td>' . $value . '</td>';
-                                echo '<td>' . number_format($value / $totalopc * 100, 2) . '% </td>';
-                            } else {
-                                echo '<td>' . $column . '</td>';
-                                echo '<td>' . $value . '</td>';
-                                echo '<td>' . number_format($value / $totalop * 100 * 0, 2) . '% </td>';
-                            }
-                        }
-                        echo '</tr>';
-                    }
+                if ($data["type"] != "per") {
+                    echo '<div class="graf">';
+                    echo '<span id="grafico" class="<?= $id ?>"></span>';
+                    echo '</div>';
+                    $op = array();
                 }
                 ?>
-                <tr>
-                    <td>
-                        <p class="t"><b>Total:ㅤ</b></p>
-                    </td>
-                    <td><?= $totalopc ?></td>
-                    <td></td>
-                </tr>
-            </table>
-            <?php
-            if ($data["type"] == "per") {
-                echo '<span id="grafico2" class="' . $ida2 . '"></span>';
-            }
-            ?>
+            </div>
+
+            <!-- CUANDO SEA PERSONALIZADO -->
+            <div class="text" id="<?= $ida2 ?>">
+                <table>
+                    <tr>
+                        <th>Opción</th>
+                        <th>Número</th>
+                        <th>Porcentage</th>
+                    </tr>
+                    <?php
+                    if ($data["type"] == "per") {
+                        $totalopc = 0;
+                        foreach ($op as $opcion) {
+                            foreach ($opcion as $opcion => $value) {
+                                $totalopc = $totalopc + $value;
+                            }
+                        }
+                        foreach ($op as $columns) {
+                            echo '<tr>';
+                            foreach ($columns as $column => $value) {
+                                if ($value > 0) {
+                                    echo '<td>' . $column . '</td>';
+                                    echo '<td>' . $value . '</td>';
+                                    echo '<td>' . number_format($value / $totalopc * 100, 2) . '% </td>';
+                                } else {
+                                    echo '<td>' . $column . '</td>';
+                                    echo '<td>' . $value . '</td>';
+                                    echo '<td>' . number_format($value / $totalop * 100 * 0, 2) . '% </td>';
+                                }
+                            }
+                            echo '</tr>';
+                        }
+                    }
+                    ?>
+                    <tr>
+                        <td>
+                            <p class="t"><b>Total:ㅤ</b></p>
+                        </td>
+                        <td><?= $totalopc ?></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <?php
+                if ($data["type"] == "per") {
+                    echo '<div class="graf">';
+                    echo '<span id="grafico2" class="' . $ida2 . '"></span>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
         </div>
-    </div>
 </main>
 
 <?php
@@ -185,8 +191,9 @@ $fecha = date("dmoHis");
     google.charts.load('current', {
         'packages': ['corechart']
     });
-    google.charts.setOnLoadCallback(draw1Chart);
     google.charts.setOnLoadCallback(draw2Chart);
+    google.charts.setOnLoadCallback(draw1Chart);
+
 
 
     function draw1Chart() {
@@ -228,6 +235,7 @@ $fecha = date("dmoHis");
         charta.draw(data, options);
     }
 </script>
+</div>
 <style>
     #exp2 {
         background-color: red;
@@ -242,6 +250,6 @@ $fecha = date("dmoHis");
     };
     document.getElementById("buton").addEventListener("click", linka);
 </script>
-<button onclick="linka()" class="exportar">EXPORTAR</button>
+
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php' ?>

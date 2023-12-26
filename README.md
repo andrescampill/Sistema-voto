@@ -72,7 +72,7 @@ ATENCIÓN: es necesario que la aplicación tenga un certificado SSL y sea abiret
 Actualmente esta en fase alpha la creación de votaciones que no sigan el patron de «A favor, En contra o Abstención».
 
 ## Versión
-Actualmente la aplicación se encuenta la versión ```v1.0.1``` .
+Actualmente la aplicación se encuenta la versión ```v1.0.2``` .
 El proyecto sigue el sistema de Versionado Semántico.  
 
 

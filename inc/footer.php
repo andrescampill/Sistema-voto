@@ -22,7 +22,7 @@
             .footer a:hover{
                 color: #1DA1F2;
                 font-style: oblique;
-                font-size: 20px;
+                font-size: 18px;
             }
         </style>
     </div>

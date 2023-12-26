@@ -41,7 +41,7 @@ h1{
     font-size: 40px;
 }
 
-#grafico{
+#grafico, #grafico2{
     position: absolute;
     display: inline-block;
     width: 70%;
@@ -50,14 +50,7 @@ h1{
     justify-content: center;
     left: 10%;
 }
-#grafico2{
-    position: absolute;
-    display: inline-block;
-    width: 70%;
-    height: 35%;
-    margin-top: 100px;
-    left: 22vw;
-}
+
 th {
     background-color: rgb(47, 176, 62);
     color: white;

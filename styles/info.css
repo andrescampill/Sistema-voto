@@ -1,16 +1,25 @@
-.text{
-    display: inline-block;
-    position: inherit;
-    width: 20%;
+*{
+    box-sizing: border-box;
 }
-#grafico, #grafico2{
+.text {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#grafico, #grafico2 {
     position: absolute;
     display: inline-block;
-    width: 70%;
-    height: 30%;
+    width: 50%;
+    height: 32%;
     min-width: 200px;
     min-height: 100px;
 }
+
+table {
+    display: inline-block;
+}
+
 .t {
     text-align: right;
 }
@@ -22,32 +31,34 @@ tr:nth-child(odd) {
 tr:nth-child(even) {
     background-color: rgba(100, 100, 100, 0.15);
 }
-form{
+
+form {
     margin-left: 35%;
 }
 
-.enviar{
+.enviar, .exportar {
     border: hidden;
     border-radius: 5px;
     background-color: rgba(150, 150, 150, 0.7);
     cursor: pointer;
-    transition: .5s ease;
+    transition: 0.5s ease;
     color: white;
     height: 2vw;
-    width: 40vh;
+    width: 50vh;
     margin-top: 10px;
     font-size: 18px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     min-width: 80px;
     min-height: 30px;
+
 }
 
-.enviar:hover{
+.enviar:hover, .exportar:hover  {
     background-color: rgba(97, 227, 71, 0.7);
     transform: scale(1.05);
 }
 
-.c{
+.c {
     position: relative;
     width: 40px;
     height: 20px;
@@ -55,14 +66,16 @@ form{
     background: #c6c6c6;
     outline: none;
     border-radius: 10px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     /* transition: 0.5s ease; */
 }
-.c:checked{
+
+.c:checked {
     background: #3cf464;
 }
-.c::before{
-    content: '';
+
+.c::before {
+    content: "";
     position: absolute;
     width: 20px;
     height: 20px;
@@ -70,17 +83,19 @@ form{
     top: 0;
     left: 0;
     background: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-    transition: .4s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.4s ease;
 }
-.c:checked::before{
+
+.c:checked::before {
     left: 20px;
 }
 
-label{
+label {
     display: inline-block;
 }
-textarea{
+
+textarea {
     border-radius: 5px;
     border: hidden;
     font-size: 16px;
@@ -94,11 +109,12 @@ textarea{
     height: 4vh;
 }
 
-input:disabled{
+input:disabled {
     background-color: rgba(184, 184, 184, 0.63);
-
 }
-input[type="text"], input[type="number"]{
+
+input[type="text"],
+input[type="number"] {
     border-radius: 5px;
     height: 1.8rem;
     border: hidden;
@@ -108,56 +124,40 @@ input[type="text"], input[type="number"]{
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 10px;
 }
-label{
+
+label {
     display: block;
     width: 5vw;
     margin-right: 15px;
     float: left;
     text-align: right;
 }
-textarea:focus{
+
+textarea:focus {
     transform: scale(1.05);
     outline: none;
 }
 
-body{
+body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
-.footer{
+
+.footer {
     margin-top: auto !important;
     position: inherit !important;
     bottom: auto !important;
 }
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 600px) {
     .navbar {
         height: 100%;
         width: 5rem;
     }
 }
 
-#esconder, .esconder { 
+#esconder,
+.esconder {
     display: none;
-}
-
-.exportar{
- margin: auto;
- transform: translateY(-60px);
-    border: hidden;
-    border-radius: 5px;
-    background-color: rgba(150, 150, 150, 0.7);
-    cursor: pointer;
-    transition: .5s ease;
-    color: white;
-    height: 2vw;
-    width: 40vh;
-    font-size: 18px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: -60px;
-}
-
-.exportar:hover{
-    background-color: rgba(227, 115, 71, 0.7);
 }
