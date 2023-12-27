@@ -1,6 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/config/database.php';
 session_start();
-if($_SESSION['perm'] == false || empty($_SESSION['perm'])){
+if ($_SESSION['perm'] == false || empty($_SESSION['perm'])) {
     header('Location: /inicio.php');
 } ?>
 
@@ -15,17 +15,17 @@ if($_SESSION['perm'] == false || empty($_SESSION['perm'])){
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
     <link rel="stylesheet" href="/styles/header-panel.css">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#ffffff"/>
+    <meta name="theme-color" content="#ffffff" />
 </head>
 
 <body>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register(
-      '/sw.js'
-    );
-  }
-</script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register(
+                '/sw.js'
+            );
+        }
+    </script>
 
     <nav class="navbar">
         <ul class="navbar-nav">

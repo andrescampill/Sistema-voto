@@ -46,10 +46,18 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de voto - FEMAE</title>
     <link rel="stylesheet" href="/styles/index.css">
-
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff" />
 </head>
 
 <body>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register(
+                '/sw.js'
+            );
+        }
+    </script>
     <p class="titulo">Sistema de voto</p>
     <img src="/assets/img/pdf-header.png" alt="FEMAE" class="center">
     <div class="formulario">
