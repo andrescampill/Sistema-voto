@@ -14,9 +14,19 @@ if($_SESSION['perm'] == false || empty($_SESSION['perm'])){
     <title><?= $titulopag ?></title>
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
     <link rel="stylesheet" href="/styles/header-panel.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff"/>
 </head>
 
 <body>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register(
+      '/sw.js'
+    );
+  }
+</script>
+
     <nav class="navbar">
         <ul class="navbar-nav">
             <li class="nav-item">
